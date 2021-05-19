@@ -62,7 +62,7 @@ def tsplot(y, lags=None, figsize=(20, 12), style='bmh'):
         smt.graphics.plot_pacf(y, lags=lags, ax=pacf_ax)
         plt.tight_layout()
 st.sidebar.title("Built for:")
-image = Image.open("C:/Users/Akash Deep/Downloads/timeseries_pred/download123.jpg")
+image = Image.open("/home/ec2-user/streamlit1/download123.jpg")
 st.sidebar.image(image,width = 250)
 st.sidebar.title("Choose a file")
 uploaded_file = st.sidebar.file_uploader(" ", type=["csv","xlsx","tsv"])
