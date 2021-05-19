@@ -10,7 +10,7 @@ from sklearn.model_selection import ParameterGrid
 import base64
 #sktime models
 from sktime.forecasting.model_selection import temporal_train_test_split
-from sktime.utils.plotting.forecasting import plot_ys
+#from sktime.utils.plotting.forecasting import plot_ys
 from sktime.forecasting.arima import AutoARIMA
 import matplotlib
 matplotlib.use("Agg")
@@ -119,13 +119,13 @@ def null_values(df):
 def types(df):
     return pd.DataFrame(df.dtypes, columns=['Type'])
 
-def forecasting_autoarima(y_train, y_test, s):
-    fh = np.arange(len(y_test)) + 1
-    forecaster = AutoARIMA(sp=s)
-    forecaster.fit(y_train)
-    y_pred = forecaster.predict(fh)
-    plot_ys(y_train, y_test, y_pred, labels=["y_train", "y_test", "y_pred"])
-    st.pyplot()
+#def forecasting_autoarima(y_train, y_test, s):
+    #fh = np.arange(len(y_test)) + 1
+    #forecaster = AutoARIMA(sp=s)
+    #forecaster.fit(y_train)
+    #y_pred = forecaster.predict(fh)
+    #plot_ys(y_train, y_test, y_pred, labels=["y_train", "y_test", "y_pred"])
+    #st.pyplot()
 
 
 def main():
@@ -300,12 +300,12 @@ def main():
             
             if st.checkbox("Train/Test Split"):
                 try:
-                    y_train, y_test = temporal_train_test_split(new_df.T.iloc[0])
-                    st.text("Train Shape")
-                    st.write(y_train.shape)
-                    st.text("Test Shape")
-                    st.write(y_test.shape)
-                    plot_ys(y_train, y_test, labels=["y_train", "y_test"])
+                    #y_train, y_test = temporal_train_test_split(new_df.T.iloc[0])
+                    #st.text("Train Shape")
+                    #st.write(y_train.shape)
+                    #st.text("Test Shape")
+                    #st.write(y_test.shape)
+                    #plot_ys(y_train, y_test, labels=["y_train", "y_test"])
                     st.pyplot()
                 except IndexError:
                     st.write("First select timeseries column to train, for further operation")
